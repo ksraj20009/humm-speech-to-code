@@ -27,7 +27,7 @@
     </header>
     <section class="hero">
       <h2>Your messy thought. Clean code.</h2>
-      <p>English, Hindi, Hinglish, or mixed. HUMM understands intent — functions, loops, queries, APIs — then writes paste-ready code. You always review first.</p>
+      <p>English, Hindi, Hinglish, or mixed. HUMM understands intent. You always review first.</p>
     </section>
     <div class="pipeline">
       <div class="step"><b>01</b> Speak</div>
@@ -44,7 +44,7 @@
           <select id="speechLang"></select>
         </div>
         <textarea id="transcript" placeholder="Speak or type logic… e.g. ek function banao jo list mein se even numbers filter kare"></textarea>
-        <div id="status" class="status">Mic ready. Type is always available.</div>
+        <div id="status" class="status">Mic ready. Type is always available. Ctrl+Enter generates.</div>
         <div class="row">
           <button class="btn primary" id="speakBtn">Speak</button>
           <button class="btn danger hidden" id="stopBtn">Stop</button>
@@ -71,6 +71,7 @@
           <span id="modelPill" class="pill hidden"></span>
           <span id="timePill" class="pill hidden"></span>
           <button class="btn ghost" id="regenBtn">Regenerate</button>
+          <button class="btn ghost" id="dlBtn">Download</button>
           <button class="btn primary" id="copyBtn">Copy</button>
         </div>
         <div class="codebox"><pre id="code">Generated code appears here. Review it, then paste into any editor.</pre></div>
@@ -84,9 +85,10 @@
     </div>
     <footer class="footer">
       <span>No accounts. No cloud history. Speak → Understand → Generate → Review → Paste.</span>
-      <span>Windows desktop: open Chrome or Edge at this URL</span>
+      <span>Works in Chrome or Edge on Windows</span>
     </footer>
   </div>
+  <script src="/lite.js"></script>
   <script src="/app.js"></script>
 </body>
 </html>
