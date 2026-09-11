@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HUMM — Speech-to-Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark">H</div>
+        <div>
+          <h1>HUMM</h1>
+          <p>Speech-to-Code — speak the logic, review the code, paste anywhere.</p>
+        </div>
+      </div>
+      <div class="meta">
+        <span id="health" class="pill">API checking</span>
+        <span class="pill">local session</span>
+        <span class="pill">keys stay in this tab</span>
+      </div>
+    </header>
+    <section class="hero">
+      <h2>Your messy thought. Clean code.</h2>
+      <p>English, Hindi, Hinglish, or mixed. HUMM understands intent — functions, loops, queries, APIs — then writes paste-ready code. You always review first.</p>
+    </section>
+    <div class="pipeline">
+      <div class="step"><b>01</b> Speak</div>
+      <div class="step"><b>02</b> Understand</div>
+      <div class="step"><b>03</b> Generate</div>
+      <div class="step"><b>04</b> Review</div>
+      <div class="step"><b>05</b> Paste</div>
+    </div>
+    <div class="grid">
+      <section class="panel">
+        <h3>Input</h3>
+        <div class="row">
+          <select id="language"></select>
+          <select id="speechLang"></select>
+        </div>
+        <textarea id="transcript" placeholder="Speak or type logic… e.g. ek function banao jo list mein se even numbers filter kare"></textarea>
+        <div id="status" class="status">Mic ready. Type is always available.</div>
+        <div class="row">
+          <button class="btn primary" id="speakBtn">Speak</button>
+          <button class="btn danger hidden" id="stopBtn">Stop</button>
+          <button class="btn primary" id="genBtn">Generate code</button>
+          <button class="btn ghost" id="clearBtn">Clear</button>
+        </div>
+        <div id="error" class="error"></div>
+        <div class="examples" id="examples"></div>
+        <div class="settings">
+          <h3>Model settings</h3>
+          <div class="fields">
+            <select id="preset"></select>
+            <input id="model" type="text" placeholder="Model name" />
+            <input id="endpoint" type="text" placeholder="Endpoint URL" />
+            <input id="apiKey" type="password" placeholder="API key (this tab only)" autocomplete="off" />
+          </div>
+          <div id="help" class="note"></div>
+        </div>
+      </section>
+      <section class="panel">
+        <h3>Review</h3>
+        <div class="row">
+          <span id="langPill" class="pill">python</span>
+          <span id="modelPill" class="pill hidden"></span>
+          <span id="timePill" class="pill hidden"></span>
+          <button class="btn ghost" id="regenBtn">Regenerate</button>
+          <button class="btn primary" id="copyBtn">Copy</button>
+        </div>
+        <div class="codebox"><pre id="code">Generated code appears here. Review it, then paste into any editor.</pre></div>
+        <h3 style="margin-top:16px">History</h3>
+        <div class="row">
+          <span id="histCount" class="pill">0 local</span>
+          <button class="btn ghost" id="clearHist">Clear all</button>
+        </div>
+        <div id="history" class="history-list"></div>
+      </section>
+    </div>
+    <footer class="footer">
+      <span>No accounts. No cloud history. Speak → Understand → Generate → Review → Paste.</span>
+      <span>Windows desktop: open Chrome or Edge at this URL</span>
+    </footer>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
