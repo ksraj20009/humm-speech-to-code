@@ -1,9 +1,7 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/styles.css", "destination": "/public/styles.css" },
-    { "source": "/app.js", "destination": "/public/app.js" },
-    { "source": "/lite.js", "destination": "/public/lite.js" },
-    { "source": "/", "destination": "/public/index.html" }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "echo skip",
+  "framework": null
 }
